@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lottery.MainPage">
+    <Grid Padding="20" RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label Text="目標號碼" x:Name="ResultEntry1" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+        <Entry Grid.Row="0" Grid.Column="1" WidthRequest="900" HorizontalOptions="Start" />
+
+        <Label Text="開獎號碼" x:Name="ResultEntry2" Grid.Row="1" Grid.Column="0"  />
+        <Entry Grid.Row="1" Grid.Column="1" WidthRequest="900" HorizontalOptions="Start" />
+
+        <Button Text="退回"  
+            Grid.Row="0" 
+            Grid.Column="1" 
+            WidthRequest="100" 
+            HeightRequest="50"  
+            HorizontalOptions="End"
+            Margin="0,0,5,0"
+            Clicked="Return_Click"/>
+
+        <Button Text="開獎" 
+            Grid.Row="0" 
+            Grid.Column="2" 
+            WidthRequest="100" 
+            HeightRequest="50" 
+            HorizontalOptions="End"
+            Clicked="PrizeButton_Click"/>
+
+        <Button Text="電腦選號" 
+            Grid.Row="1" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="2"  
+            WidthRequest="100" 
+            HeightRequest="50" 
+            HorizontalOptions="End"
+            Margin="0,10,0,0"
+            Clicked="computer_Click"/>
+
+        <Label Text="中獎號碼" Grid.Row="2" Grid.Column="0" />
+        <Label Text="中獎號碼" Grid.Row="2" Grid.Column="1" />
+        <Label Text="中獎號" Grid.Row="2" Grid.Column="2" />
+
+        <Frame Grid.Row="3" Grid.ColumnSpan="3" BorderColor="LightGray" Padding="10">
+            <ScrollView>
+                <FlexLayout x:Name="buttonContainer" Wrap="Wrap" />
+            </ScrollView>
+        </Frame>
+
+
+        <Entry x:Name="PrizeResult"  Grid.Row="5" Grid.ColumnSpan="3" />
+    </Grid>
+</ContentPage>
